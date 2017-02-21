@@ -25,8 +25,7 @@ public class SolveEqFunction implements Evaluatable {
 
 	public double checkRoot (double x){
 		return fun.evalf(x);
-	}
-	
+	}	
 
 	@Override
 	public double evalf(double x) {

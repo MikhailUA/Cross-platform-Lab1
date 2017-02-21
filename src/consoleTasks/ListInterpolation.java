@@ -76,18 +76,18 @@ public class ListInterpolation extends Interpolator {
 		
 		System.out.println("Интерполяция по: " + fun.numPoints() + "точкам");
 		System.out.println("Несортированный набор: ");
-		for (int i = 0; i < fun.numPoints(); i++){
+		for (int i = 0; i < fun.numPoints(); i++)
 			System.out.println("Точка " + (i + 1) + ": " + fun.getPoint(i));
-		}
+		
 		
 		fun.sort();
 		System.out.println("Отсортированный набор: ");
-		for (int i = 0; i < fun.numPoints(); i++){
+		for (int i = 0; i < fun.numPoints(); i++)
 			System.out.println("Точка " + (i + 1) + ": " + fun.getPoint(i));
-		}
+		
 
 		System.out.println("Минимальное значение х: "  + fun.getPoint(0));
-		System.out.println("Минимальное значение х: "  + fun.getPoint(fun.numPoints()-1).getX());		
+		System.out.println("Максимальное значение х: "  + fun.getPoint(fun.numPoints()-1).getX());		
 		
 		x = 0.5 * (fun.getPoint(0).getX() + fun.getPoint(fun.numPoints()-1).getX());
 		

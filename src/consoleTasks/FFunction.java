@@ -52,12 +52,16 @@ public class FFunction implements Evaluatable {
 		double aStep = in.nextDouble();
 		
 		System.out.println("Переменная х: " + x);
+		/* 
+		double x = 2;
+		double aBeg = 1;
+		double aEnd = 7;
+		double aStep = 0.5;
+		*/
+		
 		for (double a = aBeg; a <= aEnd; a += aStep){
 			fun.setA(a);
-			System.out.printf("a: %6.4f\tf: %6.4f\n", fun.getA(), fun.evalf(x));
+			System.out.printf("a: %6.4f\tf: %6.10f\n", fun.getA(), fun.evalf(x));
 		}
 	}
-
-
-
 }

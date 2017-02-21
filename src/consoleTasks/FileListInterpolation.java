@@ -56,18 +56,18 @@ public class FileListInterpolation extends ListInterpolation {
 		
 		System.out.println("Интерполяция по: " + fun.numPoints() + "точкам");
 		System.out.println("Несортированный набор: ");
-		for (int i = 0; i < fun.numPoints(); i++){
+		for (int i = 0; i < fun.numPoints(); i++)
 			System.out.println("Точка " + (i + 1) + ": " + fun.getPoint(i));
-		}
+		
 		
 		fun.sort();
 		System.out.println("Отсортированный набор: ");
-		for (int i = 0; i < fun.numPoints(); i++){
+		for (int i = 0; i < fun.numPoints(); i++)
 			System.out.println("Точка " + (i + 1) + ": " + fun.getPoint(i));
-		}
+		
 
 		System.out.println("Минимальное значение х: "  + fun.getPoint(0).getX());
-		System.out.println("Минимальное значение х: "  + fun.getPoint(fun.numPoints()-1).getX());		
+		System.out.println("Максимальное значение х: "  + fun.getPoint(fun.numPoints()-1).getX());		
 
 		System.out.println("Сохраняем в файл");
 		
@@ -78,7 +78,7 @@ public class FileListInterpolation extends ListInterpolation {
 			System.exit(-1);
 		}
 		
-		System.out.print("Считываем из файла");
+		System.out.print("Считываем из файла\n");
 		fun.clear();
 		
 		try{
@@ -91,12 +91,11 @@ public class FileListInterpolation extends ListInterpolation {
 		System.out.println("Данные из файла: ");
 		fun.sort();
 		
-		for (int i = 0; i < fun.numPoints(); i++){
-			System.out.println("Точка " + (i+1) + ": " + fun.getPoint(i));
-		}
+		for (int i = 0; i < fun.numPoints(); i++)
+			System.out.println("Точка " + (i+1) + ": " + fun.getPoint(i));		
 		
 		System.out.println("Минимальное значение х: "  + fun.getPoint(0).getX());
-		System.out.println("Минимальное значение х: "  + fun.getPoint(fun.numPoints()-1).getX());		
+		System.out.println("Максимальное значение х: "  + fun.getPoint(fun.numPoints()-1).getX());		
 		
 		x = 0.5 * (fun.getPoint(0).getX() + fun.getPoint(fun.numPoints()-1).getX());
 		
@@ -107,9 +106,8 @@ public class FileListInterpolation extends ListInterpolation {
 		System.out.println("Готовим данные для счета");
 		fun.clear();
 		
-		for (x = 1.0; x <= 7.0; x += 0.1){
-			fun.addPoint(new Point2D(x, Math.sin(x)));
-		}
+		for (x = 1.0; x <= 7.0; x += 0.1)
+			fun.addPoint(new Point2D(x, Math.sin(x)));		
 		
 		try{
 			fun.writeToFile("TblFunc.dat");

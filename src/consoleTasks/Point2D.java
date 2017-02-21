@@ -30,16 +30,37 @@ public class Point2D extends Point implements Comparable<Point2D> {
 		setCoord(2, y);
 	}
 	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 	@Override
 	public int compareTo(Point2D pt) {
 		// TODO Auto-generated method stub
 		return Double.compare(getX(), pt.getX());
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		java.util.List<Point2D> data = new java.util.ArrayList<Point2D>();
+		int num;
+		double x;
+		
+		java.util.Scanner in = new java.util.Scanner(System.in);
+		do {
+			System.out.print("Количество точек: ");
+			num = in.nextInt();
+		}while(num <= 0);
+		
+		for (int i = 0; i < num; i++){
+			x = 1.0 + (5.0 - 1.0)*Math.random();
+			data.add(new Point2D(x, Math.sin(x)));
+		}
+		
+		System.out.println("Несортированные данные: ");
+		for (Point2D pt: data)
+			System.out.println(pt);
+		
+		System.out.println("\nОтсортированные данные: ");
+		java.util.Collections.sort(data);
+		for (Point2D pt: data)
+			System.out.println("x = " + pt.getX() + "\ty = " + pt.getY());				
 	}
 
 }
