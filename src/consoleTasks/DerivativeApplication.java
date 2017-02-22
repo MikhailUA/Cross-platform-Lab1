@@ -3,12 +3,19 @@ package consoleTasks;
 import java.io.*;
 
 public class DerivativeApplication {
+	
+	
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args){		
+		MainView.start();	
+	}
+	
+	
+	public static void calculate()  throws IOException {
 		Evaluatable functs[] = new Evaluatable[3];
-		functs[0] = new FFunction(0.5);
-		functs[1] = new SolveEqFunction();
-		functs[2] = new FileListInterpolation();
+		functs[0] = new FFunction(0.5);			 // функция задана f(x) = exp(-ax^2)*sin(x)
+		functs[1] = new SolveEqFunction();		 // функция задана уравнением для заданного а на отрезке а [1.0, 7.0]
+		functs[2] = new FileListInterpolation(); // функция задана в табличной форме
 		
 		((SolveEqFunction)functs[1]).setRootApprox(0.7);
 		
